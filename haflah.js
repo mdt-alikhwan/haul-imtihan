@@ -1,13 +1,13 @@
-window.onload = function() {
-    // Request fullscreen mode
-    if (document.documentElement.requestFullscreen) {
-        document.documentElement.requestFullscreen();
-    } else if (document.documentElement.webkitRequestFullscreen) {
-        document.documentElement.webkitRequestFullscreen();
-    } else if (document.documentElement.msRequestFullscreen) {
-        document.documentElement.msRequestFullscreen();
-    }
-};
+    document.getElementById("fullscreenBtn").onclick = function() {
+        // Memeriksa metode fullscreen yang didukung browser
+        if (document.documentElement.requestFullscreen) {
+            document.documentElement.requestFullscreen(); // Browser modern
+        } else if (document.documentElement.webkitRequestFullscreen) {
+            document.documentElement.webkitRequestFullscreen(); // Safari
+        } else if (document.documentElement.msRequestFullscreen) {
+            document.documentElement.msRequestFullscreen(); // Internet Explorer / Edge
+        }
+    };
 
 document.querySelectorAll('.nav-indicator .btn').forEach(button => {
     button.addEventListener('click', function () {
