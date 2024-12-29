@@ -121,6 +121,7 @@ body {
     z-index: 1;
 }
 .nav-indicator {
+    overflow-x:scroll;
     position: fixed;
     bottom: 0;
     z-index: 10;
