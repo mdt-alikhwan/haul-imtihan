@@ -1,0 +1,140 @@
+body {
+    margin: 0 auto;
+    overflow: hidden;
+    box-sizing: border-box;
+    max-width: 540px;
+    width: 100%;
+    position: relative;
+}
+.section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 540px;
+    width: 100%;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 1.5s ease, transform 0.5s ease;
+    background-image: url(/haflah/bacgk.png);
+    object-fit: cover;
+    object-position: center;
+}
+.section::before,
+.section::after,
+.section > *::before,
+.section > *::after {
+    content: "";
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.section::before {
+    animation: floatTopLeft 4s ease-in-out infinite;
+}
+
+.section::after {
+    animation: floatTopRight 5s ease-in-out infinite; 
+}
+
+.section > *::before {
+    animation: floatBottomLeft 6s ease-in-out infinite;
+}
+
+.section > *::after {
+    animation: floatBottomRight 4.5s ease-in-out infinite;
+}
+
+@keyframes floatTopLeft {
+    0% { transform: translate(-8px, -12px) rotate(0deg); }
+    33% { transform: translate(0px, 0px) rotate(3deg); }
+    66% { transform: translate(-13px, -4px) rotate(-2deg); }
+    100% { transform: translate(-8px, -12px) rotate(0deg); }
+}
+
+@keyframes floatTopRight {
+    0% { transform: translate(8px, -12px) rotate(0deg); }
+    33% { transform: translate(-2px, 3px) rotate(-4deg); }
+    66% { transform: translate(16px, -7px) rotate(2deg); }
+    100% { transform: translate(8px, -12px) rotate(0deg); }
+}
+@keyframes floatBottomLeft {
+    0% { transform: translate(-4px, 8px) rotate(0deg); }
+    33% { transform: translate(4px, 4px) rotate(2deg); }
+    66% { transform: translate(-6px, 8px) rotate(-2deg); }
+    100% { transform: translate(-4px, 8px) rotate(0deg); }
+}
+
+@keyframes floatBottomRight {
+    0% { transform: translate(4px, 8px) rotate(0deg); }
+    33% { transform: translate(0px, 4px) rotate(-2deg); }
+    66% { transform: translate(0px, 6px) rotate(2deg); }
+    100% { transform: translate(4px, 8px) rotate(0deg); }
+}
+
+.section::before {
+    top: 0;
+    left: 0;
+    background-image: url(/haflah/atas\ kiri.png);
+    background-position: top left;
+    width: 150px;
+    height: 150px;
+}
+
+.section::after {
+    top: 0;
+    right: 0;
+    background-image: url(/haflah/atas\ kanan.png);
+    background-position: top right;
+    width: 150px;
+    height: 150px;
+}
+
+.section > *::before {
+    bottom: 50px; /* Disesuaikan dengan tinggi nav-indicator */
+    left: 0;
+    background-image: url(/haflah/bawah\ kiri.png);
+    background-position: bottom left;
+    width: 300px;
+    height: 300px;
+}
+
+.section > *::after {
+    bottom: 50px; /* Disesuaikan dengan tinggi nav-indicator */
+    right: 0;
+    background-image: url(/haflah/bawah\ kanan.png);
+    background-position: bottom right;
+    width: 300px;
+    height: 300px;
+}
+@media screen and (max-width: 500px) {
+    .section::before,.section::after {width: 120px;height: 120px;}
+    .section > *::before,.section > *::after {width: 240px;height: 240px;}
+}
+.section.active {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 1;
+}
+.nav-indicator {
+    position: fixed;
+    bottom: 0;
+    z-index: 10;
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 10px;
+    width: 100%;
+    margin: auto;
+    max-width: 540px;
+    width: 100%;
+    height: 65px; /* Menambahkan tinggi tetap */
+}
+
+.nav-indicator .btn {
+    margin: 0 5px;
+    color: black;
+}
