@@ -19,7 +19,7 @@ body {
     opacity: 0;
     transform: scale(0.8);
     transition: opacity 1.5s ease, transform 0.5s ease;
-    background-image: url(/haflah/bacgk.png);
+    background-image: url(/bacgk.png);
     object-fit: cover;
     object-position: center;
 }
@@ -79,7 +79,7 @@ body {
 .section::before {
     top: 0;
     left: 0;
-    background-image: url(/haflah/atas\ kiri.png);
+    background-image: url(/atas\ kiri.png);
     background-position: top left;
     width: 150px;
     height: 150px;
@@ -88,7 +88,7 @@ body {
 .section::after {
     top: 0;
     right: 0;
-    background-image: url(/haflah/atas\ kanan.png);
+    background-image: url(/atas\ kanan.png);
     background-position: top right;
     width: 150px;
     height: 150px;
@@ -97,7 +97,7 @@ body {
 .section > *::before {
     bottom: 50px; /* Disesuaikan dengan tinggi nav-indicator */
     left: 0;
-    background-image: url(/haflah/bawah\ kiri.png);
+    background-image: url(/bawah\ kiri.png);
     background-position: bottom left;
     width: 300px;
     height: 300px;
@@ -106,7 +106,7 @@ body {
 .section > *::after {
     bottom: 50px; /* Disesuaikan dengan tinggi nav-indicator */
     right: 0;
-    background-image: url(/haflah/bawah\ kanan.png);
+    background-image: url(/bawah\ kanan.png);
     background-position: bottom right;
     width: 300px;
     height: 300px;
