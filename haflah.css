@@ -50,7 +50,7 @@ body {
     background-repeat: no-repeat;
 }
 
-.section::before {
+/* .section::before {
     animation: floatTopLeft 4s ease-in-out infinite;
 }
 
@@ -64,7 +64,7 @@ body {
 
 .section > *::after {
     animation: floatBottomRight 4.5s ease-in-out infinite;
-}
+} */
 
 @keyframes floatTopLeft {
     0% { transform: translate(-8px, -12px) rotate(0deg); }
