@@ -1,3 +1,9 @@
+window.onload = function() {
+            // Menonaktifkan scroll
+        document.body.style.overflow = 'hidden';
+};
+    
+    
     document.getElementById("fullscreenBtn").onclick = function() {
         // Memeriksa metode fullscreen yang didukung browser
         if (document.documentElement.requestFullscreen) {
@@ -7,6 +13,16 @@
         } else if (document.documentElement.msRequestFullscreen) {
             document.documentElement.msRequestFullscreen(); // Internet Explorer / Edge
         }
+
+        document.body.style.overflow = '';
+        // Menuju ke section1 dan menampilkan nav-indicator
+        document.querySelector('#section1').classList.add('active');
+        document.querySelector('.coverundangan').classList.remove('active');
+        document.querySelector('.nav-indicator').style.display = 'flex';
+        document.querySelector('.nav-indicator').style.position = 'fixed';
+        document.querySelector('.nav-indicator').style.bottom = '0';
+
+
     };
 
 document.querySelectorAll('.nav-indicator .btn').forEach(button => {
